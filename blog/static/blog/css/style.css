@@ -1,0 +1,175 @@
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&display=swap');
+
+/* ── Global ── */
+body {
+    font-family: 'Lora', Georgia, serif;
+    background-color: #FFFFFF;
+    color: #3D2B1F;
+}
+
+/* ── Navbar ── */
+.navbar {
+    background-color: #FFF0BB;
+}
+
+.navbar-brand {
+    font-size: 1.5em;
+    font-weight: 800;
+    color: #5C4033
+}
+
+.nav-link {
+    color: #5C4033 !important;
+    font-size: 1.2em;
+    font-weight: 800;
+}
+
+.nav-link:hover {
+    color: #3D2B1F !important;
+}
+
+/* ── Hero ── */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ── Cards ── */
+.card {
+    background-color: #D7D0F1;
+    border: none;
+}
+
+.card-title {
+    color: #3D2B1F !important;
+}
+
+.hover-shadow {
+    transition: all 0.3s ease;
+}
+
+.hover-shadow:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15) !important;
+}
+
+/* ── Card overlay ── */
+.card-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2rem;
+    background: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6));
+    color: #3D2B1F;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.card-overlay h3 {
+    color: #3D2B1F;
+    font-size: 1.8rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.card-overlay p {
+    font-size: 0.95rem;
+    color: #5C4033;
+    margin-bottom: 0.5rem;
+}
+
+.card-overlay span {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #854F0B;
+}
+
+/* ── Buttons ── */
+.btn-honey {
+    background-color: #D7D0F1;
+    color: #3D2B1F;
+    border: none;
+    font-weight: 600;
+}
+
+.btn-honey:hover {
+    background-color: #FFF0BB;
+    color: #3D2B1F;
+}
+
+/* ── Footer ── */
+footer {
+    background-color: #FFF0BB;
+    padding: 2rem 0;
+    margin-top: 3rem;
+}
+
+footer a {
+    color: #5C4033;
+    text-decoration: none;
+}
+
+footer a:hover {
+    color: #3D2B1F !important;
+    text-decoration: underline !important;
+}
+
+
+/* ── Characters page ── */
+.character-img {
+    width: 100%;
+    max-width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+.character-number {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #D7D0F1;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.character-name {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #3D2B1F;
+    margin-bottom: 1rem;
+}
+
+.badge-trait {
+    background-color: #D7D0F1;
+    color: #3D2B1F;
+    padding: 0.4rem 0.9rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+
+/* ── Contact form ── */
+.form-label {
+    color: #3D2B1F;
+    font-weight: 600;
+}
+
+.form-control {
+    border: 1.5px solid #D7D0F1;
+    border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+.form-control:focus {
+    border-color: #FAC775;
+    box-shadow: 0 0 0 0.2rem rgba(255, 240, 187, 0.5);
+}

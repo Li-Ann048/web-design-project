@@ -1,0 +1,66 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block content %}
+
+    <!-- Hero Section -->
+    <section class="hero-section text-center rounded mb-5"
+        style="background-image: linear-gradient(rgba(255,255,255,0.6), rgba(255,255,255,0.6)), url('{% static 'blog/images/picnic.png' %}');">
+        <div class="container py-5">
+            <h1 class="display-4 fw-bold mb-3">Welcome to Mr. Bee's World</h1>
+            <p class="lead mb-4">Tiny adventures, big stories from around the globe</p>
+            <a href="#intro" class="btn btn-honey btn-lg">Explore the World</a>
+        </div>
+    </section>
+
+    <!-- Intro Section -->
+    <section id="intro" class="text-center mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <h2 class="mb-4">Join the Journey</h2>
+                <p class="lead">
+                    Mr. Bee and his plush friends travel the world together or on their own,
+                    collecting stories, calm moments, and little discoveries along the way.
+                    Discover their characters, follow their adventures, and explore the whimsical world they share.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Clickable Blocks -->
+    <section class="row g-4">
+
+        <!-- Story Card -->
+        <div class="col-md-6">
+            <a href="{% url 'mrbee_story' %}" class="text-decoration-none">
+                <div class="card border-0 shadow-sm hover-shadow overflow-hidden position-relative">
+                    <img src="{% static 'blog/images/adventure.png' %}" 
+                        class="card-img-top" 
+                        alt="Mr. Bee on an adventure">
+                    <div class="card-overlay">
+                        <h3 class="fw-bold">Adventures</h3>
+                        <p>Discover all adventures of Mr. Bee and his friends.</p>
+                        <span>Read the story →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+        <!-- Characters Card -->
+        <div class="col-md-6">
+            <a href="{% url 'characters' %}" class="text-decoration-none">
+                <div class="card border-0 shadow-sm hover-shadow overflow-hidden position-relative">
+                    <img src="{% static 'blog/images/characters.png' %}" 
+                        class="card-img-top" 
+                        alt="Mr. Bee and his friends">
+                    <div class="card-overlay">
+                        <h3 class="fw-bold">Discover Characters</h3>
+                        <p>Meet all of Mr. Bee's plush friends.</p>
+                        <span>Meet the friends →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+
+    </section>
+
+{% endblock %}
