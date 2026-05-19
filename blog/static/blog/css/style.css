@@ -15,7 +15,7 @@ body {
 .navbar-brand {
     font-size: 1.5em;
     font-weight: 800;
-    color: #5C4033
+    color: #5C4033;
 }
 
 .nav-link {
@@ -154,6 +154,74 @@ footer a:hover {
     border-radius: 20px;
     font-size: 0.85rem;
     font-weight: 600;
+}
+
+
+/* ── Story page ── */
+.story-hero {
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.story-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.story-divider-line {
+    display: inline-block;
+    width: 60px;
+    height: 3px;
+    background-color: #FFF0BB;
+    border-radius: 2px;
+}
+
+.story-divider-bee {
+    margin: 0 0.75rem;
+    font-size: 1.2rem;
+}
+
+.adventure-text {
+    font-size: 0.95rem;
+    color: #5C4033;
+}
+
+.adventure-img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.adventure-date {
+    font-size: 0.8rem;
+    color: #854F0B;
+    font-weight: 600;
+    margin-bottom: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.adventure-title {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #3D2B1F;
+    margin-bottom: 0.5rem;
+}
+
+.adventure-link {
+    color: #854F0B;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.adventure-link:hover {
+    color: #3D2B1F;
+    text-decoration: underline;
 }
 
 

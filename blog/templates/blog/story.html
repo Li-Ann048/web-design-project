@@ -1,0 +1,57 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}Adventures - Mr. Bee's World{% endblock %}
+
+{% block content %}
+
+<!-- Hero Section -->
+    <section class="hero-section text-center rounded mb-5"
+        style="background-image: url('{% static 'blog/images/picnic.png' %}');">
+    </section>
+
+<div class="container">
+    <!-- Intro -->
+    <section class="text-center mb-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-7">
+                <h2 class="mb-3">Every journey tells a story</h2>
+                <p class="lead">From sunny meadows to faraway cities, Mr. Bee and his plush friends collect moments, friendships, and little discoveries along the way.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="story-divider mb-5">
+        <span class="story-divider-line"></span>
+        <span class="story-divider-bee"></span>
+        <span class="story-divider-line"></span>
+    </div>
+
+    <!-- Adventures List -->
+    <section class="row g-4">
+        {% for adventure in adventures %}
+        <div class="col-md-4">
+            <a href="{% url 'story_detail' adventure.slug %}" class="text-decoration-none">
+                <div class="card h-100 shadow-sm hover-shadow overflow-hidden">
+                    {% if adventure.cover_image %}
+                    <img src="{{ adventure.cover_image.url }}"
+                        class="card-img-top adventure-img"
+                        alt="{{ adventure.title }}">
+                    {% endif %}
+                    <div class="card-body">
+                        <p class="adventure-date">{{ adventure.date|date:"F Y" }} · {{ adventure.location }}</p>
+                        <h3 class="adventure-title">{{ adventure.title }}</h3>
+                    </div>
+                    <div class="card-footer border-0 bg-transparent">
+                        <span class="adventure-link">Read more →</span>
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% empty %}
+        <p class="text-center">No adventures yet — check back soon! 🐝</p>
+        {% endfor %}
+    </section>
+</div>
+
+{% endblock %}

@@ -3,87 +3,88 @@
 {% block title %}Characters - Mr. Bee's World{% endblock %}
 
 {% block content %}
+    <div class="container">
+        <!-- Page Title -->
+        <div class="text-center mb-5">
+            <h1 class="display-4 fw-bold">Meet the Characters</h1>
+            <p class="lead">The wonderful friends of Mr. Bee's world</p>
+        </div>
 
-    <!-- Page Title -->
-    <div class="text-center mb-5">
-        <h1 class="display-4 fw-bold">Meet the Characters</h1>
-        <p class="lead">The wonderful friends of Mr. Bee's world</p>
+        <!-- Character 1 — image left, text right -->
+        <section class="row align-items-center mb-5 pb-5 border-bottom">
+            <div class="col-md-6 mb-4 mb-md-0 text-center"> 
+                <img src="{% static 'blog/images/mrbee.png' %}" 
+                    alt="Mr. Bee" 
+                    class="character-img img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-md-6">
+                <p class="character-number">01</p>
+                <h2 class="character-name">Mr. Bee</h2>
+                <p class="lead mb-3">The curious little bee who started it all. Mr. Bee loves exploring new places and making unexpected friends along the way.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge-trait">🌍 Adventurous</span>
+                    <span class="badge-trait">💛 Kind-hearted</span>
+                    <span class="badge-trait">📖 Curious</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character 2 — text left, image right -->
+        <section class="row align-items-center mb-5 pb-5 border-bottom">
+            <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
+                <img src="{% static 'blog/images/mroctopus.png' %}" 
+                    alt="Mr. Octopus" 
+                    class="character-img img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <p class="character-number">02</p>
+                <h2 class="character-name">Mr. Octopus</h2>
+                <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge-trait">🌸 Trait one</span>
+                    <span class="badge-trait">⭐ Trait two</span>
+                    <span class="badge-trait">🎨 Trait three</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character 3 — image left, text right -->
+        <section class="row align-items-center mb-5 pb-5 border-bottom">
+            <div class="col-md-6 mb-4 mb-md-0 text-center">
+                <img src="{% static 'blog/images/fruitbunny.png' %}" 
+                    alt="Fruit Bunny" 
+                    class="character-img img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-md-6">
+                <p class="character-number">03</p>
+                <h2 class="character-name">Fruit Bunny</h2>
+                <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge-trait">🌙 Trait one</span>
+                    <span class="badge-trait">🍀 Trait two</span>
+                    <span class="badge-trait">🎵 Trait three</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Character 4 — text left, image right -->
+        <section class="row align-items-center mb-5">
+            <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
+                <img src="{% static 'blog/images/bunny.png' %}" 
+                    alt="Character 4" 
+                    class="character-img img-fluid rounded-4 shadow-sm">
+            </div>
+            <div class="col-md-6 order-md-1">
+                <p class="character-number">04</p>
+                <h2 class="character-name">Character Name</h2>
+                <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
+                <div class="d-flex flex-wrap gap-2">
+                    <span class="badge-trait">🦋 Trait one</span>
+                    <span class="badge-trait">🌺 Trait two</span>
+                    <span class="badge-trait">✨ Trait three</span>
+                </div>
+            </div>
+        </section>
     </div>
-
-    <!-- Character 1 — image left, text right -->
-    <section class="row align-items-center mb-5 pb-5 border-bottom">
-        <div class="col-md-6 mb-4 mb-md-0 text-center"> 
-            <img src="{% static 'blog/images/mrbee.png' %}" 
-                 alt="Mr. Bee" 
-                 class="character-img img-fluid rounded-4 shadow-sm">
-        </div>
-        <div class="col-md-6">
-            <p class="character-number">01</p>
-            <h2 class="character-name">Mr. Bee</h2>
-            <p class="lead mb-3">The curious little bee who started it all. Mr. Bee loves exploring new places and making unexpected friends along the way.</p>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge-trait">🌍 Adventurous</span>
-                <span class="badge-trait">💛 Kind-hearted</span>
-                <span class="badge-trait">📖 Curious</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Character 2 — text left, image right -->
-    <section class="row align-items-center mb-5 pb-5 border-bottom">
-        <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
-            <img src="{% static 'blog/images/mroctopus.png' %}" 
-                 alt="Mr. Octopus" 
-                 class="character-img img-fluid rounded-4 shadow-sm">
-        </div>
-        <div class="col-md-6 order-md-1">
-            <p class="character-number">02</p>
-            <h2 class="character-name">Mr. Octopus</h2>
-            <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge-trait">🌸 Trait one</span>
-                <span class="badge-trait">⭐ Trait two</span>
-                <span class="badge-trait">🎨 Trait three</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Character 3 — image left, text right -->
-    <section class="row align-items-center mb-5 pb-5 border-bottom">
-        <div class="col-md-6 mb-4 mb-md-0 text-center">
-            <img src="{% static 'blog/images/fruitbunny.png' %}" 
-                 alt="Fruit Bunny" 
-                 class="character-img img-fluid rounded-4 shadow-sm">
-        </div>
-        <div class="col-md-6">
-            <p class="character-number">03</p>
-            <h2 class="character-name">Fruit Bunny</h2>
-            <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge-trait">🌙 Trait one</span>
-                <span class="badge-trait">🍀 Trait two</span>
-                <span class="badge-trait">🎵 Trait three</span>
-            </div>
-        </div>
-    </section>
-
-    <!-- Character 4 — text left, image right -->
-    <section class="row align-items-center mb-5">
-        <div class="col-md-6 order-md-2 mb-4 mb-md-0 text-center">
-            <img src="{% static 'blog/images/character4.png' %}" 
-                 alt="Character 4" 
-                 class="character-img img-fluid rounded-4 shadow-sm">
-        </div>
-        <div class="col-md-6 order-md-1">
-            <p class="character-number">04</p>
-            <h2 class="character-name">Character Name</h2>
-            <p class="lead mb-3">Your character description goes here. Tell us who they are and what makes them special in Mr. Bee's world.</p>
-            <div class="d-flex flex-wrap gap-2">
-                <span class="badge-trait">🦋 Trait one</span>
-                <span class="badge-trait">🌺 Trait two</span>
-                <span class="badge-trait">✨ Trait three</span>
-            </div>
-        </div>
-    </section>
 
 {% endblock %}

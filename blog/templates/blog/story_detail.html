@@ -1,0 +1,48 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+{% block title %}{{ adventure.title }} - Mr. Bee's World{% endblock %}
+
+{% block content %}
+
+    <!-- Hero Image -->
+    {% if adventure.cover_image %}
+    <section class="story-hero mb-5"
+        style='background-image: url("{{ adventure.cover_image.url }}");'>
+    </section>
+    {% endif %}
+
+    <!-- Adventure Header -->
+    <div class="mb-5">
+        <p class="adventure-date">{{ adventure.date|date:"F j, Y" }} · {{ adventure.location }}</p>
+        <h1 class="fw-bold">{{ adventure.title }}</h1>
+    </div>
+
+    <!-- Adventure Blocks -->
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            {% for block in blocks %}
+
+                {% if block.block_type == 'text' %}
+                <div class="mb-4">
+                    <p class="lead">{{ block.text|linebreaks }}</p>
+                </div>
+
+                {% elif block.block_type == 'image' %}
+                <div class="mb-4 text-center">
+                    <img src="{{ block.image.url }}"
+                         class="img-fluid rounded-4 shadow-sm"
+                         alt="Adventure image">
+                </div>
+
+                {% endif %}
+
+            {% endfor %}
+        </div>
+    </div>
+
+    <!-- Back link -->
+    <div class="mt-5">
+        <a href="{% url 'mrbee_story' %}" class="adventure-link">← Back to Adventures</a>
+    </div>
+
+{% endblock %}
