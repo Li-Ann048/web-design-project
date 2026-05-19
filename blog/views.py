@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 from django.contrib import messages
+from mysite.secret import RECIPIENT_EMAIL
 
 def home(request):
     return render(request, 'blog/index.html')
@@ -22,7 +23,7 @@ def contact(request):
             subject=f'Message from {name} via Mr. Bee website',
             message=f'From: {name}\nEmail: {email}\n\n{message}',
             from_email=email,
-            recipient_list=['YOUR_EMAIL@gmail.com'],
+            recipient_list=[RECIPIENT_EMAIL],
         )
         messages.success(request, 'Your message was sent! 🐝')
         return redirect('/contact/')
