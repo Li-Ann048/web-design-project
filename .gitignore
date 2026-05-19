@@ -1,7 +1,7 @@
 # Python
 *.pyc
 *~
-__pycache__
+__pycache__/
 
 # Env
 .env
@@ -13,6 +13,7 @@ db.sqlite3
 
 # Static folder at project root
 /static/
+staticfiles/
 
 # macOS
 ._*
