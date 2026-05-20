@@ -13,9 +13,11 @@
     <!-- Intro -->
     <section class="text-center mb-5">
         <div class="row justify-content-center">
-            <div class="col-lg-7">
-                <h2 class="mb-3">Every journey tells a story</h2>
-                <p class="lead">From sunny meadows to faraway cities, Mr. Bee and his plush friends collect moments, friendships, and little discoveries along the way.</p>
+            <div class="col-lg-10">
+                <h2 class="mb-4">Every journey tells a story</h2>
+                <p class="lead mb-4">Mr. Bee doesn’t know where he came from, so to find his roots and home, he decides to go on a journey to discover the world. During his trip in France, he meets some friends, <a href="{% url 'characters' %}" style="color: #854F0B;">see on the Characters page</a>. Together, they set off on exciting adventures across France and discover the power of friendship, bravery, and curiosity.</p>
+                <p class="lead mb-5">Eventually, they decide to split up to explore the world on their own, before returning to France in spring 2027 to share the stories of their adventures.</p>
+                <p class="lead mb-5">Discover their journey here, and the journey of the special friends they meet along the way.</p>
             </div>
         </div>
     </section>
@@ -28,7 +30,7 @@
     </div>
 
     <!-- Adventures List -->
-    <section class="row g-4">
+    <section class="row g-4 mb-5" id="adventures">
         {% for adventure in adventures %}
         <div class="col-md-4">
             <a href="{% url 'story_detail' adventure.slug %}" class="text-decoration-none">

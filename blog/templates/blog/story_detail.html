@@ -3,46 +3,62 @@
 {% block title %}{{ adventure.title }} - Mr. Bee's World{% endblock %}
 
 {% block content %}
+    <div class="container">
+        <!-- Hero Image -->
+        {% if adventure.cover_image %}
+        <section class="story-hero mb-5"
+         style='background-image: url("{{ adventure.cover_image.url }}");'>
+        </section>
+        {% endif %}
 
-    <!-- Hero Image -->
-    {% if adventure.cover_image %}
-    <section class="story-hero mb-5"
-        style='background-image: url("{{ adventure.cover_image.url }}");'>
-    </section>
-    {% endif %}
 
-    <!-- Adventure Header -->
-    <div class="mb-5">
-        <p class="adventure-date">{{ adventure.date|date:"F j, Y" }} · {{ adventure.location }}</p>
-        <h1 class="fw-bold">{{ adventure.title }}</h1>
-    </div>
+        <!-- Adventure Header -->
+        <div class="mb-5">
+            <p class="adventure-date">{{ adventure.date|date:"F j, Y" }} · {{ adventure.location }}</p>
+            <h1 class="fw-bold">{{ adventure.title }}</h1>
+        </div>
 
-    <!-- Adventure Blocks -->
-    <div class="row justify-content-center">
-        <div class="col-lg-8">
+        <!-- Adventure Blocks -->
+        <div class="container">
             {% for block in blocks %}
+                <!-- Loops through each block and flips the layout direction on even rows -->
+                <div class="row align-items-center mb-5 {% if forloop.counter|divisibleby:2 %}flex-row-reverse{% endif %}">
+                    
+                    <!-- Left Side (or Right Side on alternate rows) -->
+                    <div class="col-md-6 text-center">
+                        {% if block.image %}
+                            <!-- Uses the automated filename property for the alt text -->
+                            <img src="{{ block.image.url }}" 
+                                class="img-fluid rounded-4 shadow-sm adventure-split-img" 
+                                alt="{{ block.image_alt_text }}">
+                        {% else %}
+                            <!-- Fallback if a block doesn't have an image -->
+                            <div class="p-5 bg-light rounded-4 text-muted">No Image provided</div>
+                        {% endif %}
+                    </div>
 
-                {% if block.block_type == 'text' %}
-                <div class="mb-4">
-                    <p class="lead">{{ block.text|linebreaks }}</p>
+                    <!-- Right Side (or Left Side on alternate rows) -->
+                    <div class="col-md-6 py-3">
+                        {% if block.text %}
+                            <p class="lead">{{ block.text|linebreaks }}</p>
+                        {% endif %}
+                    </div>
+
                 </div>
-
-                {% elif block.block_type == 'image' %}
-                <div class="mb-4 text-center">
-                    <img src="{{ block.image.url }}"
-                         class="img-fluid rounded-4 shadow-sm"
-                         alt="Adventure image">
-                </div>
-
-                {% endif %}
-
             {% endfor %}
         </div>
-    </div>
 
-    <!-- Back link -->
-    <div class="mt-5">
-        <a href="{% url 'mrbee_story' %}" class="adventure-link">← Back to Adventures</a>
-    </div>
 
+        <!-- Back link -->
+        <div class="mt-5 d-flex justify-content-between align-items-center">
+            <a href="{% url 'story_list' %}" class="adventure-link">← Back to Adventures</a>
+            {% if next_adventure %}
+                <a href="{% url 'story_detail' next_adventure.slug %}" class="next-adventure-link">
+                    Next Adventure: {{ next_adventure.title }} →
+                </a>
+            {% else %}
+                <span class="text-muted small italic">You've reached the end of the adventures! ✨</span>
+            {% endif %}
+        </div>
+    </div>
 {% endblock %}

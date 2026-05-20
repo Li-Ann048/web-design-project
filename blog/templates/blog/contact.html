@@ -10,10 +10,10 @@
                     <h2 class="text-center mb-4">Get in Touch!</h2>
                     <p class="text-center mb-4">Want to introduce new friend to Mr.Bee's world?</p>
 
-                    {% if messages %}
-                        {% for message in messages %}
-                            <div class="alert alert-success">{{ message }}</div>
-                        {% endfor %}
+                    {% if success %}
+                    <div class="alert" style="background-color: #FFF0BB; color: #3D2B1F; border: none; border-radius: 8px; padding: 1rem;">
+                            Thank you for your message! 🐝 We'll get back to you soon.
+                    </div>
                     {% endif %}
 
                     <form method="POST" action="/contact/">

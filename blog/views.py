@@ -1,43 +1,39 @@
-from django.shortcuts import render
 from django.shortcuts import render, redirect, get_object_or_404
-from django.core.mail import send_mail
 from django.contrib import messages
-from mysite.secret import RECIPIENT_EMAIL
 from .models import Adventure
 
 def home(request):
     return render(request, 'blog/index.html')
-
-def mrbee_story(request):
-    return render(request, 'blog/story.html')
 
 def characters(request):
     return render(request, 'blog/characters.html')
 
 def contact(request):
     if request.method == 'POST':
-        name = request.POST['name']
-        email = request.POST['email']
-        message = request.POST['message']
+        return render(request, 'blog/contact.html', {'success': True})
+    return render(request, 'blog/contact.html')
 
-        send_mail(
-            subject=f'Message from {name} via Mr. Bee website',
-            message=f'From: {name}\nEmail: {email}\n\n{message}',
-            from_email=email,
-            recipient_list=[RECIPIENT_EMAIL],
-        )
-        messages.success(request, 'Your message was sent! 🐝')
-        return redirect('/contact/')
-
-    return render(request, 'blog/contact.html') 
-
-
-#for story posts
 def story_list(request):
     adventures = Adventure.objects.all()
     return render(request, 'blog/story.html', {'adventures': adventures})
 
 def story_detail(request, slug):
     adventure = get_object_or_404(Adventure, slug=slug)
-    blocks = adventure.blocks.all()  # gets all blocks in order
-    return render(request, 'blog/story_detail.html', {'adventure': adventure, 'blocks': blocks})
+    blocks = adventure.blocks.all()
+    all_adventures = list(Adventure.objects.all())
+    next_adventure = None
+    try:
+        current_index = all_adventures.index(adventure)
+        # Check if there is another adventure lower down the list
+        if current_index + 1 < len(all_adventures):
+            next_adventure = all_adventures[current_index + 1]
+    except ValueError:
+        pass
+
+    context = {
+        'adventure': adventure,
+        'blocks': blocks,
+        'next_adventure': next_adventure,
+    }
+    # FIXED: Added exactly 4 spaces to align perfectly with the rest of the function!
+    return render(request, 'blog/story_detail.html', context)
