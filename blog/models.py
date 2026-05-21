@@ -25,10 +25,9 @@ class Post(models.Model):
 # Helper function to rename image blocks automatically based on story slug and order number
 def get_block_image_path(instance, filename):
     ext = filename.split('.')[-1]
-    # Example output: adventures/blocks/island-hopping-in-croatia-block-1.jpg
-    new_filename = f"{instance.adventure.slug}-block-{instance.order}.{ext}"
-    return os.path.join('adventures/blocks/', new_filename)
-
+    name = os.path.splitext(filename)[0]
+    clean_name = slugify(name) 
+    return f'adventures/blocks/{clean_name}.{ext}'
 
 class Adventure(models.Model):
     title = models.CharField(max_length=200)
