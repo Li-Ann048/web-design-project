@@ -5,6 +5,7 @@ from django.db import models
 from django.utils import timezone
 import os
 from PIL import Image
+from django.utils.text import slugify
 
 
 class Post(models.Model):
